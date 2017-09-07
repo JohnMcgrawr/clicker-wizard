@@ -17,4 +17,9 @@ io.on('connection', (socket) => {
   });
 });
 
+io.on('connection', function (socket){
+  console.log('a user connected');
+  socket.broadcast.emit('Connected');
+});
+
 server.listen(8080);

@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: orange;
+}
+
 .center-shit img {
   margin-left: 30%;
 }
@@ -5,3 +12,21 @@
 p {
   text-align: center;
 }
+
+.chatbox {
+  background-color: honeydew;
+  height: 100px;
+  overflow: scroll;
+}
+
+.send-button {
+  background-color: black;
+}
+
+.test {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  color: red;
+  overflow-y: auto;
+ }
