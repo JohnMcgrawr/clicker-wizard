@@ -2,31 +2,52 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: orange;
-}
-
-.center-shit img {
-  margin-left: 30%;
 }
 
 p {
   text-align: center;
 }
-
-.chatbox {
-  background-color: honeydew;
-  height: 100px;
-  overflow: scroll;
+header {
+  background-color: orange;
+  height: 10%;
 }
 
-.send-button {
-  background-color: black;
+footer {
+  background: orange;
+  height: 10%;
+}
+.main-container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex: row;
+  background-color: red;
+}
+.image-holder img {
+  width: 100%;
+}
+.skill-container {
+  width: 25%;
+  background-color: gray;
 }
 
-.test {
-  background-color: black;
-  height: 100px;
-  width: 100px;
-  color: red;
+.game-container {
+  width: 50%;
+  background-color: orange;
+}
+
+.chat-container {
+  background-color: gray;
+  width: 25%;
+}
+
+.chat {
+  height: 90%;
+  width: 100%;
+  background-color: gray;
   overflow-y: auto;
- }
+}
+
+input {
+  width: 80%;
+}

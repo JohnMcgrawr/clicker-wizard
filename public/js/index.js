@@ -4,7 +4,7 @@ const socket = io.connect('http://localhost:8080');
 const sendButton = document.querySelector('.send-button');
 const messageTxt = document.querySelector('.message-txt');
 const chatMessages = document.querySelector('.chat-messages');
-const chatwindow = document.querySelector('.test');
+const chatwindow = document.querySelector('.chat');
 
 sendButton.addEventListener('click', () => {
   socket.emit('newMessage', messageTxt.value);
