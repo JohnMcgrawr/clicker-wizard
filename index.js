@@ -12,10 +12,10 @@ app.use(express.static('public'));
 
 // Set up what we are listening to on socket server
 io.on('connection', (socket) => {
-
-  socket.on('newMessage', (data , username) => {
-     socket.emit('message', data ,username);
-    socket.broadcast.emit('message', data , username);
+  console.log('Fires2???');
+  socket.on('newMessage', (data , username , counter) => {
+     socket.emit('message', data ,username, counter);
+    socket.broadcast.emit('message', data , username , counter);
     console.log(username);
   })});
 
