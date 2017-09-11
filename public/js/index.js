@@ -45,7 +45,7 @@ sendButton.addEventListener('click', () => {
 
  socket.on('message', (username ,data, counter) => {
    const messageItem = document.createElement('li');
-   messageItem.innerText = username + ': ' + data + ': ' + cookies;
+   messageItem.innerText = username + ': ' + data + ': ' + counter;
    chatMessages.appendChild(messageItem);
    chatwindow.scrollTop = chatwindow.scrollHeight;
   });
