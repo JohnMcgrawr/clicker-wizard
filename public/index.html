@@ -18,18 +18,28 @@
 </audio>
 
     <div class ="skill-container">
-      <button class="spell-1">Spell of autoclickness</button>
-      <button class="spell-2" onclick="gandalfPowerFunc()">Spell of gandalf-power</button>
-      <button class="spell-3" onclick="turnOffMusicFunc">Spell of turn of music for a while</button>
-      <button class="spell-4" onclick="switchMusicFunc()">Spell of switch music for a while</button>
-      <button class="spell-5">Spell of secretness</button>
+
+      <!-- <button onclick="cookieClick(1)">Click Me!</button>
+    		<br /> -->
+
+        <!-- poängen under gandalf -->
+        <!-- Cookies: <span id="cookies">0</span>
+    		<br /> -->
+
+        <!-- autoclicknesbutton -->
+        LEVEL <span id="cursors">0</span>
+        <br />
+        <button onclick="buyCursor()">Spell of autoclickness COST: <span id="cursorCost">10</span></button>
+    		<br />
+
+     		<script type="text/javascript" src="js/main.js"></script>
 
     </div>
 
     <div class ="game-container">
       <div class ="image-holder">
-  <img src ="/img/giphy.gif" onclick="myFunction();playAudio();logFunc();"/>
-  <p id="demo">0</p>
+      <img src ="img/giphy.gif" onclick="cookieClick(1)"/>
+       <span id="cookies">0lhhkjhkj</span>
    </div>
     </div>
 
@@ -45,7 +55,7 @@
     <input class="message-txt"/>
   </div>
 </div>
-<script src="/js/index.js"></script>
+<script src="js/index.js"></script>
 
 
 </div>
