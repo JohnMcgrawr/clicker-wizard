@@ -1,16 +1,38 @@
+const couterPoint = document.querySelector('#cookies');
 let players = [];
 
-console.log('funkar du?');
+const target = '';
+const testButtonForMassageAttack = document.querySelector('#testAttack');
 
-const sendData = () => {
-  socket.emit('attack', 'skill', 'johan', 123456);
+const sendAttack = () => {
+  socket.emit('attack', 'skill', socket.id, target);
 };
 
-socket.on('attack', (skill, username, target) => {
-  console.log(`${skill} ${username} ${target}`);
+testButtonForMassageAttack.addEventListener('click', () => {
+  sendAttack();
+});
+
+socket.on('attack', (skill, id, target) => {
+  // Uppcomming skills
+  console.log(`${'Nu Vart du Attackerad!! ' + ' , '}${skill} , ${id} , ${target}`);
+  switch (expression) {
+    case 'skill1':
+      // DO COOL STUFF
+      break;
+    case 'skill2':
+      // DO COOL STUFF
+      break;
+    case 'skill3':
+      // DO COOL STUFF
+      break;
+    default:
+  }
 });
 
 socket.on('users', (playersServer) => {
   players = playersServer;
-  console.log(`${players.length}   Får klienten sina players?`);
 });
+// ('update', (id, name, score)
+const sendUpdate = () => {
+  socket.emit('update', socket.id, username, parseInt(couterPoint.innerHTML));
+};
