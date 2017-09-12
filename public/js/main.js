@@ -24,3 +24,25 @@ window.setInterval(function(){
 	cookieClick(cursors);
 
 }, 1000);
+
+
+var gandalfs = 0;
+
+function buyGandalfs(){
+    var gandalfCost = Math.floor(10 * Math.pow(1.1,gandalfs));     //works out the cost of this cursor
+    if(cookies >= gandalfCost){
+                                //checks that the player can afford the cursor
+        gandalfs = gandalfs + 1;                                   //increases number of cursors
+    	cookies = cookies - gandalfCost;                          //removes the cookies spent
+        document.getElementById('gandalfs').innerHTML = gandalfs;  //updates the number of cursors for the user
+        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,gandalfs));       //works out the cost of the next cursor
+    document.getElementById('gandalfCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
+window.setInterval(function(){
+
+	cookieClick(gandalfs);
+
+}, 1000);
