@@ -7,11 +7,7 @@ const messageTxt = document.querySelector('.message-txt');
 const chatMessages = document.querySelector('.chat-messages');
 const chatwindow = document.querySelector('.chat');
 const autoClickButton = document.querySelector('.spell-1');
-let username;
-
-
-
-
+var username;
 
 
   myAudio = new Audio('/sounds/epic_sax_guy.mp3');
@@ -35,6 +31,8 @@ let username;
 
 document.addEventListener('DOMContentLoaded', () =>  {
  username = prompt('Enter chat-name');
+
+
 });
 
 sendButton.addEventListener('click', () => {
@@ -43,9 +41,18 @@ sendButton.addEventListener('click', () => {
 });
 
 
- socket.on('message', (username ,data, cookies) => {
-   const messageItem = document.createElement('li');
-   messageItem.innerText = username + ': ' + data + ': ' + cookies;
+ socket.on('message', (username ,data, cookies  ) => {
+    const messageItem = document.createElement('li');
+
+    const usernameElement = document.createElement('span');
+    usernameElement.innerText = username;
+    usernameElement.addEventListener('click', (event) => {
+      console.log(usernameElement);
+
+    });
+
+    messageItem.innerText = ': ' + data + ': ' + cookies;
+    messageItem.prepend(usernameElement);
    chatMessages.appendChild(messageItem);
    chatwindow.scrollTop = chatwindow.scrollHeight;
   });
@@ -61,8 +68,24 @@ messageTxt.addEventListener("keydown", function (e) {
   }
 });
 
-
-
 function myFunction(){
     document.getElementById("demo").innerHTML = add();
  }
+// the new magic fuckery
+
+ socket.on('connect', function (data) {
+     socket.emit('storeClientInfo', { customId: username , score: cookies });
+     console.log('triggers?!');
+ });
+
+ socket.on('update',function(usersInfo){
+
+         usersInfo.forEach(function(single_user){
+           //now you can use userinfo object according to your requirement
+           console.log('stuff');
+         });
+
+         });
+
+
+ // end of new magic fuckery
