@@ -14,7 +14,7 @@ app.use(express.static('public'));
 // Set up what we are listening to on socket server
 io.on('connection', (socket) => {
   socket.on('newMessage', (data , username , cookies) => {
-      socket.emit('message', data ,username, cookies);
+    socket.emit('message', data ,username, cookies);
     socket.broadcast.emit('message', data , username  , cookies);
 
   })});
@@ -33,7 +33,6 @@ io.on('connection', (socket) => {
               clientInfo.customId         = data.customId;
               clientInfo.clientId     = socket.id;
               clientInfo.score = data.score;
-              clients.push(clientInfo.score);
               socket.broadcast.emit(clientInfo);
               console.log(clientInfo.customId + ' Has connected' + ' on socket id ' + clientInfo.clientId + '  score ' + clientInfo.score);
           });

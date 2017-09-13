@@ -7,8 +7,7 @@ const messageTxt = document.querySelector('.message-txt');
 const chatMessages = document.querySelector('.chat-messages');
 const chatwindow = document.querySelector('.chat');
 const autoClickButton = document.querySelector('.spell-1');
-var username;
-
+// var username;
 
   myAudio = new Audio('/sounds/epic_sax_guy.mp3');
   myAudio.addEventListener('ended', function() {
@@ -37,21 +36,25 @@ document.addEventListener('DOMContentLoaded', () =>  {
 
 sendButton.addEventListener('click', () => {
   console.log('trycker på send');
-  socket.emit('newMessage', username, cookies,  messageTxt.value);
+   socket.emit('newMessage', messageTxt.value , username, cookies);
 });
 
-
- socket.on('message', (username ,data, cookies  ) => {
+// data ,username, cookies);
+ socket.on('message', (data ,username, cookies  ) => {
     const messageItem = document.createElement('li');
+    // clickable username fuckery
 
     const usernameElement = document.createElement('span');
     usernameElement.innerText = username;
     usernameElement.addEventListener('click', (event) => {
-      console.log(usernameElement);
 
+      var scoreInfo = new Object();
+      scoreInfo.playerScore         =  cookies ;
+      console.log(scoreInfo.playerScore);
     });
-
+      // end of clickable username fuckery
     messageItem.innerText = ': ' + data + ': ' + cookies;
+
     messageItem.prepend(usernameElement);
    chatMessages.appendChild(messageItem);
    chatwindow.scrollTop = chatwindow.scrollHeight;
@@ -61,7 +64,7 @@ messageTxt.addEventListener("keydown", function (e) {
   console.log('skickar med enterVafaaan');
 
    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-  socket.emit('newMessage', username, cookies,  messageTxt.value);
+  socket.emit('newMessage',  messageTxt.value, username, cookies);
   messageTxt.value = '';
   console.log('skickar med enterVafaaan');
 
