@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const couterPoint = document.querySelector('#counter');
+=======
+const couterPoint = document.querySelector('#cookies');
+>>>>>>> 6dfb76cf885e06fcd0bbdb19cd94755bc0fc761b
 let players = [];
 
 const target = '';
