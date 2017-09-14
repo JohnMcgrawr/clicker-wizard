@@ -1,7 +1,88 @@
-.center-shit img {
-  margin-left: 30%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 p {
   text-align: center;
+}
+
+header {
+  height: 10%;
+  background: black;
+}
+
+footer {
+  background: black;
+  height: 10%;
+}
+
+.main-container {
+  height: 80%;
+  width: 100%;
+  background-image: url('background.png');
+  background-size: 100% 100%;
+  display: flex;
+  flex: row;
+}
+
+.image-holder img {
+  width: 100%;
+}
+
+.skill-container {
+  width: 25%;
+  color: honeydew;
+}
+
+.game-container {
+  text-shadow: 2px 2px red;
+  width: 50%;
+  font-size: 3em;
+  font-weight: bolder;
+  color: honeydew;
+}
+
+.chat-container {
+  width: 25%;
+  color: honeydew;
+}
+
+.chat {
+  height: 90%;
+  width: 100%;
+  font-weight: bolder;
+  text-shadow: 1px 1px red;
+  font-size: 1.2em;
+  overflow-y: auto;
+}
+
+input {
+  width: 80%;
+}
+
+.spell-1 {
+  margin-left: 25%;
+  margin-top: 20px;
+}
+
+.spell-2 {
+  margin-left: 25%;
+  margin-top: 40px;
+}
+
+.spell-3 {
+  margin-left: 25%;
+  margin-top: 40px;
+}
+
+.spell-4 {
+  margin-left: 25%;
+  margin-top: 40px;
+}
+
+.spell-5 {
+  margin-left: 25%;
+  margin-top: 40px;
 }

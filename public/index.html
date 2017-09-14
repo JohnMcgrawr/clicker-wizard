@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
   <title>THE WORLDS MOST ADDICTIVE CLICKER GAME!!</title>
   <script type="text/javascript" src="/js/clicker-script.js"></script>
 
@@ -10,28 +9,60 @@
   <link rel="stylesheet" href="/css/master.css">
 </head>
 <body>
+     <header> asdf </header>
+
+<div class ="main-container" >
 
   <audio id="myAudio">
   <source src="/sounds/rec_0s.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<div class ="center-shit">
+    <div class ="skill-container">
 
-<img src ="/img/giphy.gif" onclick="myFunction();playAudio();logFunc();"/>
+      <!-- <button onclick="cookieClick(1)">Click Me!</button>
+    		<br /> -->
 
-<p id="demo">0</p>
+        <!-- poängen under gandalf -->
+        <!-- Cookies: <span id="cookies">0</span>
+    		<br /> -->
+
+        <!-- autoclicknesbutton -->
+        LEVEL <span id="cursors">0</span>
+        <br />
+        <button onclick="buyCursor()">Spell of autoclickness COST: <span id="cursorCost">10</span></button>
+    		<br />
+        <!-- TEST IF ATTACK WORKS REMOVE LATER-->
+        <button id="testAttack">MessageSpell!!! COST: <span id="cursorCost12">10</span></button>
+        <br />
+     		<script type="text/javascript" src="js/main.js"></script>
+
+    </div>
+
+    <div class ="game-container">
+      <div class ="image-holder">
+      <img src ="img/giphy.gif" onclick="cookieClick(1)"/>
+       <span id="cookies">0</span>
+   </div>
+    </div>
+
+
+<div class ="chat-container">
+    <div class ="chat">
+    <ul class="chat-messages" >
+    </ul>
+  </div>
+
+  <div class="chat-menu">
+    <button class="send-button">Send</button>
+    <input class="message-txt"/>
+  </div>
+</div>
+<script src="js/index.js"></script>
+<script src="js/clicker-wizard.data.share.js"></script>
+
 
 </div>
-
-<div class="chat-form">
-  <input class="message-txt"/>
-  <button class="send-button">Send</button>
-</div>
-<ul class="chat-messages">
-</ul>
-<script src="/js/index.js"></script>
-
-
+<footer> QWERTY</footer>
 </body>
 </html>
