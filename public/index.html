@@ -3,54 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>THE WORLDS MOST ADDICTIVE CLICKER GAME!!</title>
-  <script type="text/javascript" src="/js/clicker-script.js"></script>
-
+  <!-- move to bottum of file -->
+  <!-- <script type="text/javascript" src="/js/clicker-wizard.game.js"></script> -->
   <script src="/socket.io/socket.io.js"></script>
   <link rel="stylesheet" href="/css/master.css">
 </head>
 <body>
-     <header> asdf </header>
+
+<header>
+  <h1>asdf</h1>
+</header>
 
 <div class ="main-container" >
-
   <audio id="myAudio">
-  <source src="/sounds/rec_0s.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+    <!-- labb Added onclick="playAudio()" -->
+    <source src="/sounds/rec_0s.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <div class ="skill-container">
+  <div class ="skill-container">
 
       <!-- <button onclick="cookieClick(1)">Click Me!</button>
-    		<br /> -->
+  		<br /> -->
 
-        <!-- poängen under gandalf -->
-        <!-- Cookies: <span id="cookies">0</span>
-    		<br /> -->
+      <!-- poängen under gandalf -->
+      <!-- Cookies: <span id="cookies">0</span>
+    	<br /> -->
 
-        <!-- autoclicknesbutton -->
-        LEVEL <span id="cursors">0</span>
-        <br />
-        <button onclick="buyCursor()">Spell of autoclickness COST: <span id="cursorCost">10</span></button>
-    		<br />
-        <!-- TEST IF ATTACK WORKS REMOVE LATER-->
-        <button id="testAttack">MessageSpell!!! COST: <span id="cursorCost12">10</span></button>
-        <br />
-     		<script type="text/javascript" src="js/main.js"></script>
+      <!-- autoclicknesbutton -->
+      LEVEL <span id="cursors-level">0</span>
+      <br />
+      <button onclick="buyCursor()">Spell of autoclickness COST: <span id="cursorCost">10</span></button>
+    	<br />
+      <!-- TEST IF ATTACK WORKS REMOVE LATER-->
+      <button id="testAttack">MessageSpell!!! COST: <span id="cursorCost12">10</span></button>
+      <br />
+  </div>
 
+  <div class ="game-container">
+    <div class ="image-holder">
+      <img src ="img/giphy.gif" id="main-image"/>
+      <span id="counter-window">0</span>
     </div>
-
-    <div class ="game-container">
-      <div class ="image-holder">
-      <img src ="img/giphy.gif" onclick="cookieClick(1)"/>
-       <span id="cookies">0</span>
-   </div>
-    </div>
+  </div>
 
 
 <div class ="chat-container">
-    <div class ="chat">
-    <ul class="chat-messages" >
-    </ul>
+  <div class ="chat">
+    <ul class="chat-messages" ></ul>
   </div>
 
   <div class="chat-menu">
@@ -58,11 +58,18 @@
     <input class="message-txt"/>
   </div>
 </div>
-<script src="js/index.js"></script>
-<script src="js/clicker-wizard.data.share.js"></script>
 
+<script type="text/javascript" src="js/clicker-wizard.chat.js"></script>
+<script type="text/javascript" src="js/clicker-wizard.chat.js"></script>
+<script type="text/javascript" src="js/clicker-wizard.data.share.js"></script>
+<script type="text/javascript" src="js/clicker-wizard.sounds.js"></script>
+<script type="text/javascript" src="js/clicker-wizard.skills.attack.js"></script>
+<script type="text/javascript" src="js/clicker-wizard.skills.autoclick.js"></script>
+<script type="text/javascript" src="/js/clicker-wizard.game.js"></script>
 
 </div>
-<footer> QWERTY</footer>
+<footer>
+  <h3>QWERTY</h3>
+</footer>
 </body>
 </html>

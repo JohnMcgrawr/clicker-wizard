@@ -1,4 +1,4 @@
-const couterPoint = document.querySelector('#cookies');
+const couterPoint = document.querySelector('#counter');
 let players = [];
 
 const target = '';
