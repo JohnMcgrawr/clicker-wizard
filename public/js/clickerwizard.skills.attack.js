@@ -1,22 +1,28 @@
+/* global clickerwizard */
 
+const target = '';
 
-let target = '';
-const testButtonForMassageAttack = document.querySelector('#testAttack');
-
-
-let skillType = 'skill';
+const skillType = 'skill';
 const sendAttack = () => {
-  clickerwizard.data.socket.emit('attack', skillType, socket.id, target);
+  clickerwizard.data.socket.emit('attack', skillType, clickerwizard.data.socket.id, target);
 };
 
 
+const testButtonForMassageAttack = document.querySelector('#testAttack');
+const costMessageSpellWindow = document.querySelector('#cursorCost12');
+let costMessageSpell = 10;
 testButtonForMassageAttack.addEventListener('click', () => {
-  sendAttack();
+  if (clickerwizard.game.counter >= costMessageSpell) {
+    clickerwizard.game.counter -= costMessageSpell;
+    costMessageSpell += costMessageSpell * 1.5;
+    costMessageSpellWindow.innerText = costMessageSpell;
+    sendAttack();
+  }
 });
+
 
 clickerwizard.data.socket.on('attack', (skill, id, target) => {
   // Uppcomming skills
-  console.log(`${'Nu Vart du Attackerad!! ' + ' , '}${skill} , ${id} , ${target}`);
   switch (skill) {
     case 'skill':
       prompt('AAAATTAAAACKERAAADDD!!!!');

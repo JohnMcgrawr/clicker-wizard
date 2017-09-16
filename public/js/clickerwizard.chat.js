@@ -1,41 +1,45 @@
-
-/* global io */
-// client
+/* global clickerwizard */
 // const socket = io.connect('http://localhost:8080');
 // listens on the server
-const sendButton = document.querySelector('.send-button');
-const messageTxt = document.querySelector('.message-txt');
-const chatMessages = document.querySelector('.chat-messages');
-const chatwindow = document.querySelector('.chat');
-const autoClickButton = document.querySelector('.spell-1');
-let username;
+clickerwizard.chat = {};
+clickerwizard.chat.Imports = class {
+  constructor() {
+    this.sendButton = document.querySelector('.send-button');
+    this.messageTxt = document.querySelector('.message-txt');
+    this.chatMessages = document.querySelector('.chat-messages');
+    this.chatwindow = document.querySelector('.chat');
+    // const autoClickButton = document.querySelector('.spell-1');
+    this.username = '';
+  }
+};
+clickerwizard.chat.imports = new clickerwizard.chat.Imports();
 
 document.addEventListener('DOMContentLoaded', () => {
-  username = prompt('Enter chat-name');
+  clickerwizard.chat.imports.username = prompt('Enter chat-name');
 });
 
-sendButton.addEventListener('click', () => {
-  console.log('trycker på send');
-  clickerwizard.data.socket.emit('newMessage', username, clickerwizard.game.counter, messageTxt.value);
+clickerwizard.chat.imports.sendButton.addEventListener('click', () => {
+  clickerwizard.data.socket.emit('newMessage',
+    clickerwizard.chat.imports.username,
+    clickerwizard.game.counter,
+    clickerwizard.chat.imports.messageTxt.value,
+  );
 });
 
 clickerwizard.data.socket.on('message', (username, data, counter) => {
   const messageItem = document.createElement('li');
   messageItem.innerText = `${username}: ${data}: ${counter}`;
-  chatMessages.appendChild(messageItem);
-  chatwindow.scrollTop = chatwindow.scrollHeight;
+  clickerwizard.chat.imports.chatMessages.appendChild(messageItem);
+  clickerwizard.chat.imports.chatwindow.scrollTop = clickerwizard.chat.imports.chatwindow.scrollHeight;
 });
 
-messageTxt.addEventListener('keydown', (e) => {
-  console.log('skickar med enterVafaaan');
-
+clickerwizard.chat.imports.messageTxt.addEventListener('keydown', (e) => {
   if (e.keyCode === 13) { // checks whether the pressed key is "Enter"
-    socket.emit('newMessage', username, clickerwizard.game.counter, messageTxt.value);
-    messageTxt.value = '';
-    console.log('skickar med enterVafaaan');
+    clickerwizard.data.socket.emit('newMessage',
+      clickerwizard.chat.imports.username,
+      clickerwizard.game.counter,
+      clickerwizard.chat.imports.messageTxt.value,
+    );
+    clickerwizard.chat.imports.messageTxt.value = '';
   }
 });
-
-function myFunction() {
-  document.getElementById('demo').innerHTML = add();
-}

@@ -1,4 +1,4 @@
-
+/* global clickerwizard */
 clickerwizard.sounds = {};
 
 clickerwizard.sounds.myAudio = new Audio('/sounds/epic_sax_guy.mp3');

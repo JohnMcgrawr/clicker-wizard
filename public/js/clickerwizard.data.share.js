@@ -1,3 +1,4 @@
+/* global clickerwizard */
 clickerwizard.data.share = {};
 
 clickerwizard.data.share.players = [];
@@ -8,7 +9,7 @@ clickerwizard.data.socket.on('users', (playersServer) => {
 });
 // ('update', (id, name, score)
 clickerwizard.data.share.sendUpdate = () => {
-  clickerwizard.data.socket.emit('update', clickerwizard.data.socket.id, username, parseInt(clickerwizard.game.counter));
+  clickerwizard.data.socket.emit('update', clickerwizard.data.socket.id, clickerwizard.chat.imports.username, parseInt(clickerwizard.game.counter));
 };
 
 window.setInterval(() => {

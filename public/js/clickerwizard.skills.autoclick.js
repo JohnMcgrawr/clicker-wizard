@@ -1,3 +1,4 @@
+/* global clickerwizard */
 // const { ns } = require('./clickerwizard.game.js');
 //
 // const clickerwizard = ns();
@@ -13,8 +14,9 @@ function buyCursor() {
     document.getElementById('cursors-level').innerText = cursors; // updates the number of cursors for the user
     document.getElementById('counter-window').innerText = clickerwizard.game.counter; // updates the number of cookies for the user
   }
+
   const nextCost = Math.floor(10 * Math.pow(1.1, cursors)); // works out the cost of the next cursor
-  document.getElementById('cursorCost').innerHTML = nextCost; // updates the cursor cost for the user
+  document.getElementById('cursorCost').innerText = nextCost; // updates the cursor cost for the user
 }
 
 window.setInterval(() => {

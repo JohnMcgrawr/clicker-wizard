@@ -1,3 +1,4 @@
+/* global clickerwizard */
 clickerwizard.game = {};
 clickerwizard.game.counter = 0;
 
