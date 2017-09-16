@@ -1,3 +1,4 @@
+
 let counter = 0;
 
 const clickMainImage = document.querySelector('#main-image');
