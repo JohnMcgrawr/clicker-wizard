@@ -1,7 +1,7 @@
 
 /* global io */
 // client
-const socket = io.connect('http://localhost:8080');
+// const socket = io.connect('http://localhost:8080');
 // listens on the server
 const sendButton = document.querySelector('.send-button');
 const messageTxt = document.querySelector('.message-txt');
@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 sendButton.addEventListener('click', () => {
   console.log('trycker på send');
-  socket.emit('newMessage', username, counter, messageTxt.value);
+  clickerwizard.data.socket.emit('newMessage', username, clickerwizard.game.counter, messageTxt.value);
 });
 
-socket.on('message', (username, data, counter) => {
+clickerwizard.data.socket.on('message', (username, data, counter) => {
   const messageItem = document.createElement('li');
   messageItem.innerText = `${username}: ${data}: ${counter}`;
   chatMessages.appendChild(messageItem);
@@ -30,7 +30,7 @@ messageTxt.addEventListener('keydown', (e) => {
   console.log('skickar med enterVafaaan');
 
   if (e.keyCode === 13) { // checks whether the pressed key is "Enter"
-    socket.emit('newMessage', username, counter, messageTxt.value);
+    socket.emit('newMessage', username, clickerwizard.game.counter, messageTxt.value);
     messageTxt.value = '';
     console.log('skickar med enterVafaaan');
   }

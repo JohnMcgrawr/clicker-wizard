@@ -6,7 +6,7 @@ const testButtonForMassageAttack = document.querySelector('#testAttack');
 
 let skillType = 'skill';
 const sendAttack = () => {
-  socket.emit('attack', skillType, socket.id, target);
+  clickerwizard.data.socket.emit('attack', skillType, socket.id, target);
 };
 
 
@@ -14,7 +14,7 @@ testButtonForMassageAttack.addEventListener('click', () => {
   sendAttack();
 });
 
-socket.on('attack', (skill, id, target) => {
+clickerwizard.data.socket.on('attack', (skill, id, target) => {
   // Uppcomming skills
   console.log(`${'Nu Vart du Attackerad!! ' + ' , '}${skill} , ${id} , ${target}`);
   switch (skill) {

@@ -1,18 +1,16 @@
-const clickerwizard.data.share = {
-  const counterPoint = document.querySelector('#counter-window');
+clickerwizard.data.share = {};
 
-  let players = [];
+clickerwizard.data.share.players = [];
 
 
-  socket.on('users', (playersServer) => {
-    players = playersServer;
-  });
-  // ('update', (id, name, score)
-  const sendUpdate = () => {
-    socket.emit('update', socket.id, username, parseInt(counterPoint.innerHTML));
-  };
+clickerwizard.data.socket.on('users', (playersServer) => {
+  clickerwizard.data.share.players = playersServer;
+});
+// ('update', (id, name, score)
+clickerwizard.data.share.sendUpdate = () => {
+  clickerwizard.data.socket.emit('update', clickerwizard.data.socket.id, username, parseInt(clickerwizard.game.counter));
+};
 
-  window.setInterval(() => {
-    sendUpdate();
-  }, 500);
-}
+window.setInterval(() => {
+  clickerwizard.data.share.sendUpdate();
+}, 500);

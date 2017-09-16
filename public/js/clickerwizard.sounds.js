@@ -1,13 +1,14 @@
 
+clickerwizard.sounds = {};
 
-myAudio = new Audio('/sounds/epic_sax_guy.mp3');
-myAudio.addEventListener('ended', function () {
+clickerwizard.sounds.myAudio = new Audio('/sounds/epic_sax_guy.mp3');
+clickerwizard.sounds.myAudio.addEventListener('ended', () => {
   this.currentTime = 0;
   this.play();
 }, false);
-myAudio.play();
+clickerwizard.sounds.myAudio.play();
 
-function playAudio() {
+clickerwizard.sounds.playAudio = () => {
   const audio = document.getElementById('myAudio');
   if (audio.paused) {
     audio.play();
@@ -15,4 +16,4 @@ function playAudio() {
     audio.pause();
     audio.currentTime = 0;
   }
-}
+};

@@ -1,14 +1,12 @@
+clickerwizard.game = {};
+clickerwizard.game.counter = 0;
 
-let counter = 0;
+clickerwizard.game.counterClick = (number) => {
+  clickerwizard.game.counter += number;
+  document.getElementById('counter-window').innerHTML = clickerwizard.game.counter;
+};
 
-const clickMainImage = document.querySelector('#main-image');
-
-function counterClick(number) {
-  counter += number;
-  document.getElementById('counter-window').innerHTML = counter;
-}
-
-clickMainImage.addEventListener('click', () => {
-  counterClick(1);
-  playAudio();
+document.querySelector('#main-image').addEventListener('click', () => {
+  clickerwizard.game.counterClick(1);
+  clickerwizard.sounds.playAudio();
 });
