@@ -22,7 +22,7 @@ clickerwizard.skills.attack.sendAttack = (skillType) => {
 function clickFunctionLogic(spellCost, multiplyBy, skillType) {
   if (clickerwizard.game.counter >= spellCost) {
     clickerwizard.game.counter -= spellCost;
-    spellCost += spellCost * multiplyBy;
+    spellCost += Math.ceil(spellCost * multiplyBy);
     clickerwizard.skills.attack.sendAttack(skillType);
   }
   return spellCost;
